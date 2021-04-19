@@ -56,7 +56,7 @@
         <h5 class="mb-3 text-center titulo">
           Preço
         </h5>
-        <input [(ngModel)]='precoFiltrado' class="slider-eco" type="range" min="{{menorPreco}}" max="{{maiorPreco}}" (change)='filtrarProdutos()' step="0.01" [value]='precoFiltrado'>
+        <input [(ngModel)]='precoFiltrado' class="slider-eco" type="range" min="{{menorPreco}}" max="{{maiorPreco}}" (change)='filtrarProdutos()' step="1" [value]='precoFiltrado'>
         <div class="input-preco-div mt-2">
           <p>R$ {{ precoFiltrado | number: '1.0-0'}}</p>
         </div>
