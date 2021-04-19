@@ -13,14 +13,14 @@ export class CategoriaService {
     ) { }
   
   getAllCategoria(): Observable<Categoria[]> {
-    return this.http.get<Categoria[]>('http://localhost:8080/categorias');
+    return this.http.get<Categoria[]>('https://efeito-eco.herokuapp.com/categorias');
   }
 
   getByIdCategoria(id: number): Observable<Categoria> {
-    return this.http.get<Categoria>(`http://localhost:8080/categorias/${id}`);
+    return this.http.get<Categoria>(`https://efeito-eco.herokuapp.com/categorias/${id}`);
   }
 
   postCategoria(categoria: Categoria): Observable<Categoria> {
-    return this.http.post<Categoria>("http://localhost:8080/categorias", categoria);
+    return this.http.post<Categoria>("https://efeito-eco.herokuapp.com/categorias", categoria);
   }
 }

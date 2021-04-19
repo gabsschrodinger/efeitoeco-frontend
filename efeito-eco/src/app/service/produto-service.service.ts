@@ -18,18 +18,18 @@ export class ProdutoServiceService {
   } 
   
   getAllProduto(): Observable<Produto[]> {
-    return this.http.get<Produto[]>('http://localhost:8080/produtos');
+    return this.http.get<Produto[]>('https://efeito-eco.herokuapp.com/produtos');
   }
 
   getByIdProduto(id: number): Observable<Produto> {
-    return this.http.get<Produto>(`http://localhost:8080/produtos/${id}`);
+    return this.http.get<Produto>(`https://efeito-eco.herokuapp.com/produtos/${id}`);
   }
 
   getByNomeProduto(nome: string): Observable<Produto[]>{
-    return this.http.get<Produto[]>(`http://localhost:8080/produtos/nome/${nome}`);
+    return this.http.get<Produto[]>(`https://efeito-eco.herokuapp.com/produtos/nome/${nome}`);
   }
 
   deleteProduto(id: number) {
-    return this.http.delete(`http://localhost:8080/produtos/${id}`, this.token);
+    return this.http.delete(`https://efeito-eco.herokuapp.com/produtos/${id}`, this.token);
   }
 }
