@@ -95,3 +95,15 @@
 	width: 300px;
 	background-color: #075f21;
 }
+
+@media screen and (max-width: 605px) {
+	#chat-chatbot {
+		width: 250px;
+	}
+}
+
+@media screen and (max-width: 505px) {
+	.chat {
+		width: 100%;
+	} 
+}

@@ -25,6 +25,9 @@ export class CarrinhoComponent implements OnInit {
 
   endereco: Endereco = new Endereco();
 
+  remetente: string;
+  numeroCasa: string;
+
   constructor(
     private carrinhoService: CarrinhoService,
     private router: Router,
@@ -65,38 +68,29 @@ export class CarrinhoComponent implements OnInit {
   }
 
   terminarCompra() {
-    // this.auth.getByIdUsuario(environment.id).subscribe((resp: Usuario) => {
-    //   this.usuario = resp;
-    //   for(let i = 0; i < this.produtosCarrinho.length; i++) {
-    //     this.usuario.minhasCompras.push(this.produtosCarrinhoFull[i]);
-    //   }
-
-    //   this.auth.putUsuario(this.usuario).subscribe((resp: Usuario) => {
-    //     this.usuario = resp;
-    //     this.alertas.showAlertSuccess("Compra efetuada!");
-    //     this.carrinhoService.esvaziarCarrinho();
-    //     this.router.navigate(['/home']);
-    //   })
-    // })
-
-    let idDosProdutosComprados = [];
-
-    for(let i = 0; i < this.produtosCarrinho.length; i++) {
-      idDosProdutosComprados.push(this.produtosCarrinhoFull[i].id);
+    if(this.remetente != undefined && this.numeroCasa != undefined && this.endereco.cep != undefined && this.endereco.uf != undefined && this.endereco.localidade != undefined && this.endereco.logradouro != undefined && this.endereco.bairro != undefined) {
+      let idDosProdutosComprados = [];
+  
+      for(let i = 0; i < this.produtosCarrinho.length; i++) {
+        idDosProdutosComprados.push(this.produtosCarrinhoFull[i].id);
+      }
+  
+      this.auth.adicionarProdutosComprados(environment.id, idDosProdutosComprados).subscribe((resp: Usuario) => {
+        this.usuario = resp;
+        this.alertas.showAlertSuccess("Compra efetuada!");
+        this.carrinhoService.esvaziarCarrinho();
+        this.router.navigate(['/home']);
+      })
+    } else {
+      this.alertas.showAlertDanger("Você precisa preencher os dados de entrega antes de finalizar sua compra.");
     }
-
-    this.auth.adicionarProdutosComprados(environment.id, idDosProdutosComprados).subscribe((resp: Usuario) => {
-      this.usuario = resp;
-      this.alertas.showAlertSuccess("Compra efetuada!");
-      this.carrinhoService.esvaziarCarrinho();
-      this.router.navigate(['/home']);
-    })
   }
 
   encontrarEnderecoPeloCep(cep: string) {
     this.cepService.encontrarEndereco(cep).subscribe((resp: Endereco) => {
       this.endereco = resp;
     })
+
   }
 
 

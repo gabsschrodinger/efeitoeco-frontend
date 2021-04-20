@@ -32,10 +32,10 @@ export class ChatbotComponent implements OnInit {
       ["Boa noite"],
       ["Boa tarde"],
       ["Bom dia"],
-      [`Para descobrir nossos maravilhosos produtos, <a href='http://localhost:4200/produtos' target="_blank">clique aqui</a>`],
-      [`Para ser um dos nossos parceiros, você deve <a href='http://localhost:4200/cadastrar' target="_blank">criar uma conta</a>, ir até a página de "minha conta" e clicar no botão de "cadastrar produto".`],
+      [`Para descobrir nossos maravilhosos produtos, <a href='https://efeitoeco-frontend.vercel.app/produtos' target="_blank">clique aqui</a>`],
+      [`Para ser um dos nossos parceiros, você deve <a href='https://efeitoeco-frontend.vercel.app/cadastrar' target="_blank">criar uma conta</a>, ir até a página de "minha conta" e clicar no botão de "cadastrar produto".`],
       ["Que bom!", "Fico feliz em saber disso!", "Que ótimo!", "Maravilha!"],
-      [`Para comprar um de nossos incríveis produtos, faça o seu  <a href='http://localhost:4200/cadastrar' target="_blank">cadastro aqui</a>, entre em "produtos" e escolha os de sua preferência.`],
+      [`Para comprar um de nossos incríveis produtos, faça o seu  <a href='https://efeitoeco-frontend.vercel.app/cadastrar' target="_blank">cadastro aqui</a>, entre em "produtos" e escolha os de sua preferência.`],
       [`Você pode saber mais sobre nós na seção <a href='#'>sobre nós</a> e nos acompanhar nas redes sociais (<a href='https://www.facebook.com/Efeito-Eco-102859405242662' target="_blank">Facebook</a>, <a href='https://twitter.com/EcoEfeito' target="_blank">Twitter</a> e <a href='https://www.instagram.com/efeito_eco/' target="_blank">Instagram</a>).`]
   ];
 
